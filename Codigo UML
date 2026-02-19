@@ -1,0 +1,33 @@
+@startuml
+class Pacman
+class Fantasma
+class Blinky
+class Pinky
+class Inky
+class Clyde
+class Fruta
+class Cereza
+class Fresa
+class Naranja
+class Manzana
+class Melon
+class Campana
+class Llave
+class Galaxian
+class Punto
+class PowerPellet
+class Laberinto
+class Pared
+class Pasillo
+class CasaFantasmas
+class Tunel
+class Nivel
+class Puntaje
+class Vida
+class Jugador
+class Velocidad
+class Temporizador
+class Bonus
+class Record
+
+@enduml
