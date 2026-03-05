@@ -1,0 +1,129 @@
+class Pacman{
+- Vida
+- Velocidad
++ comerPunto()
++ comerPowerPellet()
++ morir()
+}
+
+class Fantasma{
+- Velocidad
+- estado
++ perseguir()
++ huir()
+}
+
+class Blinky
+class Pinky
+class Inky
+class Clyde
+
+class Fruta{
++ aparecer()
++ darPuntos()
+}
+
+class Cereza
+class Fresa
+class Naranja
+class Manzana
+class Melon
+
+class Campana
+class Llave
+class Galaxian
+
+class Punto{
++ sumarPuntos()
+}
+
+class PowerPellet{
++ activarModoVulnerable()
+}
+
+class Laberinto
+class Pared
+class Pasillo
+class CasaFantasmas
+class Tunel
+
+class Nivel{
+- numero
++ iniciarNivel()
+}
+
+class Puntaje{
+- puntos
++ sumar()
+}
+
+class Vida{
+- cantidad
++ perderVida()
+}
+
+class Jugador{
+- nombre
++ iniciarJuego()
+}
+
+class Velocidad
+class Temporizador{
++ iniciar()
++ terminar()
+}
+
+class Bonus
+class Record{
+- mejorPuntaje
++ guardarRecord()
+}
+
+Blinky --|> Fantasma
+Pinky --|> Fantasma
+Inky --|> Fantasma
+Clyde --|> Fantasma
+
+Cereza --|> Fruta
+Fresa --|> Fruta
+Naranja --|> Fruta
+Manzana --|> Fruta
+Melon --|> Fruta
+
+Campana --|> Bonus
+Llave --|> Bonus
+Galaxian --|> Bonus
+
+Jugador "1" -- "1" Pacman 
+Jugador "1" -- "1" Puntaje 
+Jugador "1" -- "1" Vida 
+Jugador "1" -- "1" Record 
+
+Nivel "1" -- "1" Laberinto 
+Laberinto "1" -- "*" Pared 
+Laberinto "1" -- "*" Pasillo 
+Laberinto "1" -- "1" CasaFantasmas 
+Laberinto "1" -- "2" Tunel : tiene
+
+Pacman ..> Punto 
+Pacman ..> PowerPellet 
+Pacman ..> Fruta 
+Pacman ..> Velocidad 
+
+Fantasma ..> Velocidad 
+Fantasma ..> Temporizador 
+
+Bonus ..> Puntaje 
+
+Pacman *-- Vida
+Pacman *-- Puntaje
+Pacman *-- Velocidad
+
+Fantasma *-- Velocidad
+Fantasma *-- Temporizador
+
+Fruta *-- Bonus
+
+Nivel *-- Laberinto
+
+Jugador *-- Record
