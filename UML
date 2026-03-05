@@ -1,0 +1,80 @@
+class Pacman
+class Fantasma
+class Blinky
+class Pinky
+class Inky
+class Clyde
+class Fruta
+class Cereza
+class Fresa
+class Naranja
+class Manzana
+class Melon
+class Campana
+class Llave
+class Galaxian
+class Punto
+class PowerPellet
+class Laberinto
+class Pared
+class Pasillo
+class CasaFantasmas
+class Tunel
+class Nivel
+class Puntaje
+class Vida
+class Jugador
+class Velocidad
+class Temporizador
+class Bonus
+class Record
+
+Blinky --|> Fantasma
+Pinky --|> Fantasma
+Inky --|> Fantasma
+Clyde --|> Fantasma
+
+Cereza --|> Fruta
+Fresa --|> Fruta
+Naranja --|> Fruta
+Manzana --|> Fruta
+Melon --|> Fruta
+
+Campana --|> Bonus
+Llave --|> Bonus
+Galaxian --|> Bonus
+
+Jugador "1" -- "1" Pacman 
+Jugador "1" -- "1" Puntaje 
+Jugador "1" -- "1" Vida 
+Jugador "1" -- "1" Record 
+
+Nivel "1" -- "1" Laberinto 
+Laberinto "1" -- "*" Pared 
+Laberinto "1" -- "*" Pasillo 
+Laberinto "1" -- "1" CasaFantasmas 
+Laberinto "1" -- "2" Tunel : tiene
+
+Pacman ..> Punto 
+Pacman ..> PowerPellet 
+Pacman ..> Fruta 
+Pacman ..> Velocidad 
+
+Fantasma ..> Velocidad 
+Fantasma ..> Temporizador 
+
+Bonus ..> Puntaje 
+
+
+Pacman *-- Vida
+Pacman *-- Puntaje
+Pacman *-- Velocidad
+
+Fantasma *-- Velocidad
+Fantasma *-- Temporizador
+
+Fruta *-- Bonus
+
+Nivel *-- Laberinto
+
+Jugador *-- Record
